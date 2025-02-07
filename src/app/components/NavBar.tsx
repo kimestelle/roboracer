@@ -90,15 +90,15 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="absolute top-full left-0 w-full bg-black bg-opacity-90 p-4 flex flex-col items-center shadow-lg md:hidden"
+            className="absolute top-full left-0 w-full p-4 flex flex-col items-center gap-2 md:hidden z-[40]"
             initial="hidden"
             animate="visible"
             exit="hidden"
             variants={menuVariants}
           >
             {links.map((link) => (
-              <motion.div key={link.href} variants={itemVariants}>
-                <Link href={link.href} className="block text-white text-md py-2 hover:text-red-400" onClick={() => setMenuOpen(false)}>
+              <motion.div key={link.href} variants={itemVariants} className='black-center-grad flex w-full justify-center hover:text-red-400'>
+                <Link href={link.href} className="text-md py-2 hover:italic" onClick={() => setMenuOpen(false)}>
                   {link.text}
                 </Link>
               </motion.div>

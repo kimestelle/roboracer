@@ -116,7 +116,7 @@ p {
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 999px;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 0.5rem 1.5rem;
   z-index: 10;
   width: 90%;
@@ -136,6 +136,10 @@ p {
   padding-bottom: 0.75rem;
   color: black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.black-center-grad {
+  background: linear-gradient(to right, transparent, black, transparent);
 }
 
 @media (min-width: 768px) {
