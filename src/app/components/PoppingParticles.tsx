@@ -46,11 +46,11 @@ export default function PoppingParticles() {
           attract: { enable: true, rotate: { x: 1200, y: 1200 } },
         },
         number: { value: 10, density: { enable: true, area: 800 } },
-        opacity: { value: 0.9, anim: { enable: true, speed: 0.5, minimumValue: 0.3, sync: false } },
+        opacity: { value: 0.5, anim: { enable: true, speed: 0.5, minimumValue: 0.3, sync: false } },
         shape: { type: "circle" },
         links: {enable: true, distance: 100, color: "#FC00FF", opacity: 0.4, width: 60},
         size: {
-          value: { min: 20, max: 100 },
+          value: { min: 20, max: 200 },
           anim: { enable: true, speed: 1, minimumValue: 0.3, sync: false },
         },
         collisions: { enable: true },

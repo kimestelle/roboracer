@@ -14,7 +14,7 @@ const ProfileCard = ({ name, linkedin, image }: { name: string, linkedin?: strin
 );
 
 //profile card grid
-const ProfileList = ({ title, data }: { title: string, data: any[] }) => (
+const ProfileList = ({ title, data }: { title: string, data: { name: string, linkedin?: string, image: string }[] }) => (
     <div className="mt-8 responsive-padding">
         <h5 className="text-lg font-semibold">{title}</h5>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
