@@ -44,12 +44,19 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center overflow-hidden min-h-screen bg-black text-white">
-      <div className="big-blur fixed w-[100svw] h-[100svh] inset-0 pointer-events-none">
+      <div className="big-blur fixed w-[100vw] h-[100vh] inset-0 pointer-events-none">
           {memoizedParticles}
       </div>
       <div id="landing" className="relative w-[100svw] h-[100svh]">
       <div className="absolute inset-0 bg-black bg-opacity-50 z-[5]"></div>
-        <video autoPlay muted loop className="absolute w-full h-full object-cover">
+        <video 
+        autoPlay 
+        muted 
+        loop
+        playsInline 
+        webkit-playsinline 
+        disablePictureInPicture
+         className="absolute w-full h-full object-cover">
           <source src="landing/f110_fpv.mp4" type="video/mp4"/>
         </video>
         <div className="absolute w-full h-full bg-opacity-50 flex items-center justify-center lg:px-[10svw] z-[6]">
