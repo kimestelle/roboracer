@@ -45,16 +45,16 @@ const PartnersList = () => (
 // About Page
 export default function About() {
     return (
-        <div className="w-full text-white bg-zinc-950">
-            <div className="w-full h-[85svh] shadow-lg p-8 sm:px-12 text-white text-center flex flex-col gap-8 items-center justify-center pt-24 overflow-hidden">
+        <div className="w-full text-white bg-zinc-950 p-8 pt-32 sm:px-12 ">
+            <div className="w-full h-[65svh] branded-card text-white text-center flex flex-col gap-8 items-center justify-center overflow-hidden">
                 <Image
                     src="/about/upenn-ppl.jpg"
                     alt="Logo Gradient"
-                    className='lg:max-w-[50svw]'
+                    className='lg:max-w-[60svw]'
                     width={400}
                     height={350}
                 />
-                <p className='lg:max-w-[60svw]'>
+                <p className='lg:max-w-[70svw]'>
                     RoboRacer is an international community of researchers, engineers, and autonomous systems enthusiasts. 
                     It was originally founded at the University of Pennsylvania in 2016 but has since spread to many other institutions worldwide. 
                     Our mission is to foster interest, excitement, and critical thinking about the increasingly ubiquitous field of autonomous systems.

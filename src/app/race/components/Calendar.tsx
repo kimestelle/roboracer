@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -13,6 +14,7 @@ interface Event {
   start: string;
   end?: string;
   description?: string;
+  image: string;
 }
 
 const CalendarWithEventList: React.FC = () => {
@@ -22,10 +24,10 @@ const CalendarWithEventList: React.FC = () => {
   useEffect(() => {
     //dynamic loading
     setEvents([
-      { id: '1', title: 'Race 1', start: '2025-02-10T00:00:00Z', description: 'desc 1' },
-      { id: '2', title: 'Race 2', start: '2025-02-15T14:00:00Z', description: 'desc 2' },
-      { id: '3', title: 'Race 3', start: '2025-02-22T10:00:00Z', description: 'desc 3' },
-      { id: '4', title: 'Race 4', start: '2025-02-27T18:30:00Z', description: 'desc 4' },
+      { id: '1', title: 'Race 1', start: '2025-02-10T00:00:00Z', description: 'desc 1', image: '/events/placeholder.png' },
+      { id: '2', title: 'Race 2', start: '2025-02-15T14:00:00Z', description: 'desc 2', image: '/events/placeholder.png'},
+      { id: '3', title: 'Race 3', start: '2025-02-22T10:00:00Z', description: 'desc 3', image: '/events/placeholder.png' },
+      { id: '4', title: 'Race 4', start: '2025-02-27T18:30:00Z', description: 'desc 4', image: '/events/placeholder.png' },
     ]);
   }, []);
 
@@ -58,9 +60,12 @@ const CalendarWithEventList: React.FC = () => {
                     <span className="font-medium">{event.title}</span>
                     <span className="text-sm text-gray-600">{new Date(event.start).toLocaleDateString()}</span>
                   </div>
-                  {expandedEventId === event.id && event.description && (
+                  {/* {expandedEventId === event.id && event.description && ( */}
+                    <>
                     <p className="mt-2 text-gray-700">{event.description}</p>
-                  )}
+                    <Image src={event.image} width={500} height={300} alt={event.title}></Image>
+                    </>
+                  {/* )} */}
                 </li>
               ))
           ) : (

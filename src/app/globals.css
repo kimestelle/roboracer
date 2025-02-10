@@ -80,12 +80,18 @@ p {
   font-family: var(--font-archivo), sans-serif;
 }
 
-.black-overlay::before {
+.branded-card {
+  border-radius: 20px;
+  border: 1px solid white;
+  padding: 20px;
+}
+
+.branded-card::after {
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .dotted-bg {

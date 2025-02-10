@@ -48,8 +48,22 @@ export default function Navbar() {
     }
   }, [currentPath]);
 
+  const menuVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { staggerChildren: 0.05, ease: "easeOut" },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <nav ref={navRef} className={`${isAltNav ? "navbar-alt dotted-bg" : "navbar"} relative overflow-hidden`}
+    <nav ref={navRef} className={`${isAltNav ? "navbar-alt dotted-bg" : "navbar"} relative`}
       onMouseLeave={() => setHoveredIndex(null)}>
       <Link href="/" ref={logoRef}>
         <motion.div
@@ -132,24 +146,18 @@ export default function Navbar() {
         />
       </button>
 
+      {/* Mobile Dropdown Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="absolute top-full left-0 w-full p-4 flex flex-col items-center gap-2 md:hidden z-[40] text-white"
+            className="absolute top-full left-0 w-full p-4 flex flex-col items-center gap-2 md:hidden z-[40]  text-white"
             initial="hidden"
             animate="visible"
             exit="hidden"
-            variants={{
-              hidden: { opacity: 0, y: -20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { staggerChildren: 0.05, ease: "easeOut" },
-              },
-            }}
+            variants={menuVariants}
           >
             {links.map((link) => (
-              <motion.div key={link.href} className="black-center-grad flex w-full justify-center hover:text-red-400">
+              <motion.div key={link.href} variants={itemVariants} className='black-center-grad flex w-full justify-center hover:text-red-400'>
                 <Link href={link.href} className="text-md py-2 hover:italic" onClick={() => setMenuOpen(false)}>
                   {link.text}
                 </Link>
