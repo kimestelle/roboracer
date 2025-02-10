@@ -54,7 +54,7 @@ export default function Home() {
         muted 
         loop
         playsInline 
-        webkit-playsinline 
+        webkit-playsinline="true"
         disablePictureInPicture
          className="absolute w-full h-full object-cover">
           <source src="landing/f110_fpv.mp4" type="video/mp4"/>
