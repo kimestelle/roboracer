@@ -12,7 +12,7 @@ const links = [
   { href: "/race", text: "RACE" },
   { href: "/course", text: "COURSE" },
   { href: "/research", text: "RESEARCH" },
-  { href: "/forum", text: "FORUM" },
+  { href: "/news", text: "NEWS" },
 ];
 
 export default function Navbar() {
